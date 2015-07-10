@@ -37,6 +37,11 @@ class curlforapi
         $this->headerParameters = $constructHeader;
         return true;
     }
+    public function setAuthentication($constructAuthentication)
+    {
+        $this->authentication = $constructAuthentication;
+        return true;
+    }
     //end of seters
 
     //execute request
