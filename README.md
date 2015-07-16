@@ -11,6 +11,17 @@ You can easily :
 * Set up a custom HTTP header for the request URL
 * Set up a HTTP basic autentication for the request URL
 
+## Install
+
+### Composer
+
+### Manual Install
+```php
+require_once('src/curlforapi.php');
+$request = new projet21\curlforapi($request_url, $request_post, $request_header, $request_auth);
+//see below for methods
+```
+
 ## Methods
 
 ### construct
@@ -145,14 +156,17 @@ Return the curl request
 
 We are doing a request to the GitHub api using a [Personal access tokens](https://github.com/settings/tokens)
 ```php
-require_once 'curlforapi.class.php'; //Require the class file
+<?php
+require_once('vendor/autoload.php');
 $request_url = 'https://api.github.com/user'; //GitHub Api for access to authenticate user informations
-$request_auth = '<YOUR USERNAME>' . ":" . '<YOUR PERSONNAL TOKEN HERE>'; //GitHub required Basic HTTP authentication with UserName and Token
+$request_auth = '<YOUR USERNAME>' . ":" . '<YOUR ACCESS TOKEN>'; //GitHub required Basic HTTP authentication with UserName and Token
 $request_header = array('User-Agent: <YOUR USERNAME>'); //GitHub required User-Agent header
-$request = new curlforapi($request_url, NULL, $request_header, $request_auth);
+$request = new projet21\curlforapi($request_url, NULL, $request_header, $request_auth);
 $request->curlExecute();
 $return = json_decode($request->getReturn(), true);
-?>
-<pre><?php print_r($return); ?></pre>
+echo '<pre>';
+print_r($return);
+echo '</pre>';
+
 
 ```
