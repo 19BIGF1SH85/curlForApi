@@ -15,6 +15,8 @@ You can easily :
 
 ### Composer
 
+composer require projet21/curlforapi
+
 ### Manual Install
 ```php
 require_once('src/curlforapi.php');
