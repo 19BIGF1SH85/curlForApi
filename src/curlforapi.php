@@ -2,6 +2,9 @@
 /**
  * CURL for API is class for using CURL in php and make http request
  */
+
+namespace projet21;
+
 class curlforapi
 {
     protected $url; //HTTP request URL
